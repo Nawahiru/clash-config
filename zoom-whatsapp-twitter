@@ -1,0 +1,108 @@
+socks-port: 7890
+external-controller: 127.0.0.1:9090
+external-ui: C:\Users\NAWAHIRU_\AppData\Roaming\clash\yacd-gh-pages
+profile:
+  store-selected: true
+  store-fake-ip: true
+proxies:
+  - name: "CDN VMESS"
+    type: vmess
+    server: meetzoom.proxyhell.tk
+    port: 443
+    uuid: 9d2a2a09-a40a-41c9-ac9c-99f9577ec8d2
+    cipher: aes-128-gcm
+    alterId: 0
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: 
+    network: ws
+    ws-opts:
+      path: /vmessws
+  - name: "VMESS TCP"
+    type: vmess
+    server: 139.177.186.228
+    port: 443
+    uuid: 9d2a2a09-a40a-41c9-ac9c-99f9577ec8d2
+    cipher: aes-128-gcm
+    alterId: 0
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: google.zoom.us
+    network: http
+    http-opts:
+      path: 
+        - '/vmesstcp'
+  - name: "TROJAN"
+    type: trojan
+    server: 139.177.186.228
+    port: 443
+    password: 9d2a2a09-a40a-41c9-ac9c-99f9577ec8d2
+    udp: true
+    sni: google.zoom.us
+    skip-cert-verify: true
+  - name: "VMESS TCP (Twitter)"
+    type: vmess
+    server: 139.177.186.228
+    port: 443
+    uuid: 9d2a2a09-a40a-41c9-ac9c-99f9577ec8d2
+    cipher: aes-128-gcm
+    alterId: 0
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: t.co
+    network: http
+    http-opts:
+      path: 
+        - '/vmesstcp'
+  - name: "TROJAN (Twitter)"
+    type: trojan
+    server: 139.177.186.228
+    port: 443
+    password: 9d2a2a09-a40a-41c9-ac9c-99f9577ec8d2
+    udp: true
+    sni: t.co
+    skip-cert-verify: true
+  - name: "VMESS TCP (Whatsapp)"
+    type: vmess
+    server: 139.177.186.228
+    port: 443
+    uuid: 9d2a2a09-a40a-41c9-ac9c-99f9577ec8d2
+    cipher: aes-128-gcm
+    alterId: 0
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: c.whatsapp.net
+    network: http
+    http-opts:
+      path: 
+        - '/vmesstcp'
+  - name: "TROJAN (Whatsapp)"
+    type: trojan
+    server: 139.177.186.228
+    port: 443
+    password: 9d2a2a09-a40a-41c9-ac9c-99f9577ec8d2
+    udp: true
+    sni: c.whatsapp.net
+    skip-cert-verify: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 192.168.8.1
+tun:
+  enable: true
+  stack: gvisor
+  dns-hijack:
+    - 198.18.0.2:53
+  auto-detect-interface: true
+  auto-route: true
+mode: global
+log-level: info
+allow-lan: false
+ipv6: false
