@@ -1,6 +1,4 @@
 socks-port: 7890
-external-controller: 127.0.0.1:9090
-external-ui: C:\Users\NAWAHIRU_\AppData\Roaming\clash\yacd-gh-pages
 profile:
   store-selected: true
   store-fake-ip: true
