@@ -93,13 +93,6 @@ dns:
   fake-ip-range: 198.18.0.1/16
   nameserver:
     - 192.168.8.1
-tun:
-  enable: true
-  stack: gvisor
-  dns-hijack:
-    - 198.18.0.2:53
-  auto-detect-interface: true
-  auto-route: true
 mode: global
 log-level: info
 allow-lan: false
